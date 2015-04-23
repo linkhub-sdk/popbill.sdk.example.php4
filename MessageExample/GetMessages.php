@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
@@ -9,7 +9,7 @@
 
 	$testCorpNum = '1234567890';			# 팝빌회원 사업자번호, '-'제외 10자리
 	$testUserID = 'testkorea';				# 팝빌회원 아이디
-	$ReceiptNum = '015042317000000001';		# 문자전송 요청 시 발급받은 접수번호(receiptNum)
+	$ReceiptNum = '015042317000000002';		# 문자전송 요청 시 발급받은 접수번호(receiptNum)
 	
 	$Presponse = $MessagingService->GetMessages($testCorpNum, $ReceiptNum, $testUserID);
 	
