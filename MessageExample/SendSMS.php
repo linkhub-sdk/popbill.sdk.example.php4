@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
@@ -16,7 +16,7 @@
 
 	$Messages[] = array(
 		'snd' => '07075106766',			# 발신번호
-		'rcv' => '01043245117',			# 수신번호
+		'rcv' => '010111222',			# 수신번호
 		'rcvnm' => '수신자성명',		# 수신자성명
 		'msg'	=> '개별 메시지 내용'	# 개별 메시지 내용
 	);

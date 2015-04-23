@@ -7,25 +7,29 @@
 <?php
 	include 'common.php';
 	
-	$testCorpNum = '1234567890';	# 팝빌 회원 사업자번호, "-" 제외 10자리
+	$testCorpNum = '1234567890';	# 팝빌 회원 사업자번호, "-"제외 10자리
 	$testUserID = 'testkorea';		# 팝빌 회원 아이디
-	$reserveDT = null;				# 예약전송일시(yyyyMMddHHmmss), null인 경우 즉시전송
-#	$reserveDT = '20151212230000';  	
+	$reserveDT = null;				# 예약전송일시(yyyyMMddHHmmss), null인경우 즉시전송 
+
+#	$reserveDT = '20150211200000';  
+
+	$senderNum = '07075103710';		#동보메시지 발신자번호
+	$subject = '동보메시지 제목';
+	$content = '동보메시지 내용. 2000byte';
 
 	$Messages = array();
 
 	for ($i=0; $i<99; $i++){
 		$Messages[] = array(
-			'snd' => '07075106766',			# 발신번호
-			'rcv' => '000111222',			# 수신번호
-			'rcvnm' => '수신자성명'+$i,		# 수신자성명
-			'msg'	=> '개별 메시지 내용'	# 개별 메시지 내용
+			'rcv' => '010111222',			# 수신번호
+			'rcvnm' => '수신자성명'+$i,		# 수신자 성명
 		);
 	}
-
-	#SendSMS(사업자번호, 동보전송발신번호, 동보전송내용, 전송정보배열, 예약전송일시, 회원아이디)
-	$Presponse = $MessagingService->SendSMS($testCorpNum,'','',$Messages, $reserveDT, $testUserID);
-
+	$FilePath = './test.jpg';
+	
+	#SendMMS(사업자번호, 동보전송발신번호, 동보전송제목 동보전송내용, 전송정보배열,파일경로, 예약전송일시, 회원아이디)
+	$Presponse = $MessagingService->SendMMS($testCorpNum, $senderNum, $subject, $content,$Messages, $FilePath, $reserveDT, $testUserID);
+	
 	if(is_a($Presponse,'PopbillException')){
 		$code = $Presponse->code;
 		$message = $Presponse->message;
@@ -36,7 +40,7 @@
 			<p class="heading1">Response</p>
 			<br/>
 			<fieldset class="fieldset1">
-				<legend>단문문자 100건 전송</legend>
+				<legend>MMS 문자 동보전송</legend>
 				<ul>
 					<?
 						if(!isset($code)) { 

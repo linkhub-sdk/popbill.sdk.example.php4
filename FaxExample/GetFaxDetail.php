@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
@@ -9,9 +9,10 @@
 
 	$testCorpNum = '1234567890';	#팝빌 회원 사업자 번호, "-"제외 10자리
 	$testUserID = 'testkorea';		#팝빌 회원 아이디
-	$ReceiptNum = '015021018234300001';		#팩스전송 접수번호
+	$ReceiptNum = '015042316435100001';		#팩스전송 접수번호
 
 	$Presponse = $FaxService->GetFaxDetail($testCorpNum ,$ReceiptNum, $testUserID);
+
 	if(is_a($Preponse,'PopbillException')){
 		$code = $Presponse->code;
 		$message = $Presponse->message;
@@ -31,23 +32,32 @@
 							<li>Response.message : "<? echo $message ?></li>
 					<?
 						} else {
+							for ($i = 0; $i < Count($Presponse); $i++){
 					?>
-							<li> sendState : <? echo $Presponse->sendState; ?> </li>
-							<li> convState : <? echo $Presponse->convState; ?> </li>
-							<li> sendNum : <? echo $Presponse->sendNum; ?> </li>
-							<li> receiveNum : <? echo $Presponse->receiveNum; ?> </li>
-							<li> receiveName : <? echo $Presponse->receiveName; ?> </li>
-							<li> sendPageCnt : <? echo $Presponse->sendPageCnt; ?> </li>
-							<li> successPageCnt : <? echo $Presponse->successPageCnt; ?> </li>
-							<li> failPageCnt : <? echo $Presponse->failPageCnt; ?> </li>
-							<li> refundPageCnt : <? echo $Presponse->refundPageCnt; ?> </li>
-							<li> cancelPageCnt : <? echo $Presponse->cancelPageCnt; ?> </li>
-							<li> reserveDT : <? echo $Presponse->reserveDT; ?> </li>
-							<li> sendDT : <? echo $Presponse->sendDT; ?> </li>
-							<li> resultDT : <? echo $Presponse->resultDT; ?> </li>
-							<li> sendResult : <? echo $Presponse->sendResult; ?> </li>
+							
+							<fieldset class="fieldset2"> 
+								<legend> 팩스전송내역 조회 결과 [<? echo $i+1 ?>/<? echo Count($Presponse)?>]</legend>
+								<ul>
+
+									<li> sendState : <? echo $Presponse[$i]->sendState; ?> </li>
+									<li> convState : <? echo $Presponse[$i]->convState; ?> </li>
+									<li> sendNum : <? echo $Presponse[$i]->sendNum; ?> </li>
+									<li> receiveNum : <? echo $Presponse[$i]>receiveNum; ?> </li>
+									<li> receiveName : <? echo $Presponse[$i]->receiveName; ?> </li>
+									<li> sendPageCnt : <? echo $Presponse[$i]->sendPageCnt; ?> </li>
+									<li> successPageCnt : <? echo $Presponse[$i]->successPageCnt; ?> </li>
+									<li> failPageCnt : <? echo $Presponse[$i]->failPageCnt; ?> </li>
+									<li> refundPageCnt : <? echo $Presponse[$i]->refundPageCnt; ?> </li>
+									<li> cancelPageCnt : <? echo $Presponse[$i]->cancelPageCnt; ?> </li>
+									<li> reserveDT : <? echo $Presponse[$i]->reserveDT; ?> </li>
+									<li> sendDT : <? echo $Presponse[$i]->sendDT; ?> </li>
+									<li> resultDT : <? echo $Presponse[$i]->resultDT; ?> </li>
+									<li> sendResult : <? echo $Presponse[$i]->sendResult; ?> </li>
+								</ul>
+							</fieldset>
 
 					<?
+							}
 						}
 					?>				
 				</ul>

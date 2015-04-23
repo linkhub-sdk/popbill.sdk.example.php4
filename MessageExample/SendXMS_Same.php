@@ -7,25 +7,34 @@
 <?php
 	include 'common.php';
 	
-	$testCorpNum = '1234567890';	# 팝빌 회원 사업자번호, "-" 제외 10자리
+	$testCorpNum = '1234567890';	# 팝빌 회원 사업자번호, "-"제외 10자리
 	$testUserID = 'testkorea';		# 팝빌 회원 아이디
 	$reserveDT = null;				# 예약전송일시(yyyyMMddHHmmss), null인경우 즉시전송
-#	$reserveDT = '20151212230000';  	
-
+#	$reserveDT = '20150210200000';  
+	
+	$senderNum = '07075103710';		# 동보전송 메시지 발신번호
+	$subject = '동보전송 메시지 제목';
+	$content = '동보전송 메시지 내용';
+	
 	$Messages = array();
 
-	for ($i=0; $i<99; $i++){
+	for ($i=0; $i<49; $i++){
 		$Messages[] = array(
-			'snd' => '07075106766',			# 발신번호
 			'rcv' => '010111222',			# 수신번호
-			'rcvnm' => '수신자성명'+$i,		# 수신자 성명
-			'msg'	=> '개별 메시지 내용',	# 개별 메시지 내용. 장문은 2000byte로 길이가 조정되어 전송됨.
-			'sjt'	=> '개발 메시지 제목'	# 개별 메시지 내용
+			'rcvnm' => '수신자성명',		# 수신자성명
 		);
 	}
-	
-	#SendLMS(사업자번호, 동보전송발신번호, 동보전송제목 동보전송내용, 전송정보배열, 예약전송일시, 회원아이디)
-	$Presponse = $MessagingService->SendLMS($testCorpNum,'','','',$Messages, $reserveDT, $testUserID);
+
+	for ($i=50; $i<99; $i++){
+		$Messages[] = array(
+			'rcv' => '010111222',			# 수신번호
+			'rcvnm' => '수신자성명',		# 수신자성명
+		);
+	}
+
+	#자동인식 문자전송의 경우 문자메시지 내용의 길이에 따라 90Byte 이상인 경우 장문(LMS)으로 전송됩니다.
+	#SendXMS(사업자번호, 동보전송발신번호, 동보전송제목, 동보전송내용, 전송정보배열, 예약전송일시, 회원아이디)
+	$Presponse = $MessagingService->SendXMS($testCorpNum,$senderNum,$subject,$content,$Messages, $reserveDT, $testUserID);
 
 	if(is_a($Presponse,'PopbillException')){
 		$code = $Presponse->code;
@@ -37,7 +46,7 @@
 			<p class="heading1">Response</p>
 			<br/>
 			<fieldset class="fieldset1">
-				<legend>장문문자 100건 전송</legend>
+				<legend>장/단문 자동인식 문자 동보전송</legend>
 				<ul>
 					<?
 						if(!isset($code)) { 

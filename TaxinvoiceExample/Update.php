@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
@@ -30,7 +30,7 @@
 	$Taxinvoice->invoicerMgtKey = $invoicerMgtKey;				# [필수] 공급자 문서관리번호
 	$Taxinvoice->invoicerCEOName = '공급자 대표자성명_수정';	# [필수]
 	$Taxinvoice->invoicerAddr = '공급자 주소';					
-	$Taxinvoice->invoicerContactName = '공급자 담당자성명';		# [필수]
+	$Taxinvoice->invoicerContactName = '공급자 담당자성명';		
 	$Taxinvoice->invoicerEmail = 'tester@test.com';				
 	$Taxinvoice->invoicerTEL = '070-0000-0000';					
 	$Taxinvoice->invoicerHP = '010-0000-0000';					
@@ -43,7 +43,7 @@
 	$Taxinvoice->invoiceeMgtKey = '';							# 공급받는자 문서관리번호, [역발행]시 필수 
 	$Taxinvoice->invoiceeCEOName = '공급받는자 대표자성명';		# [필수]
 	$Taxinvoice->invoiceeAddr = '공급받는자 주소';
-	$Taxinvoice->invoiceeContactName1 = '공급받는자 담당자성명';	# [필수]
+	$Taxinvoice->invoiceeContactName1 = '공급받는자 담당자성명';	
 	$Taxinvoice->invoiceeEmail1 = 'tester@test.com';
 	$Taxinvoice->invoiceeTEL1 = '070-0000-0000';
 	$Taxinvoice->invoiceeHP1 = '010-0000-0000';

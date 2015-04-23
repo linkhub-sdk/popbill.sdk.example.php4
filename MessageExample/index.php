@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		
 		<title>팝빌 SDK PHP 4.X Example.</title>
@@ -38,6 +38,7 @@
 					<ul>
 						<li><a href="SendSMS.php">sendSMS</a> - 단문 문자메시지 1건 전송</li>
 						<li><a href="SendSMS_Multi.php">sendSMS</a> - 단문 문자메시지 다량(최대1000건) 전송</li>
+						<li><a href="SendSMS_Same.php">sendSMS</a> - 단문 문자메시지 동보전송</li>
 					</ul>
 				</fieldset>
 				
@@ -46,14 +47,25 @@
 					<ul>
 						<li><a href="SendLMS.php">sendLMS</a> - 장문 문자메시지 1건 전송</li>
 						<li><a href="SendLMS_Multi.php">sendLMS</a> - 장문 문자메시지 다량(최대1000건) 전송</li>
+						<li><a href="SendLMS_Same.php">sendLMS</a> - 장문 문자메시지 동보전송</li>
 					</ul>
 				</fieldset>
 				
 				<fieldset class="fieldset2">
-					<legend>단/장문 문자 자동 전송</legend>
+					<legend>단/장문 문자 자동인식 전송</legend>
 					<ul>
 						<li><a href="SendXMS.php">sendXMS</a> - 단/장문 문자메시지 1건 전송</li>
 						<li><a href="SendXMS_Multi.php">sendXMS</a> - 단/장문 문자메시지 다량(최대1000건) 전송</li>
+						<li><a href="SendXMS_Same.php">sendXMS</a> - 단/장문 문자메시지 동보전송</li>
+					</ul>
+				</fieldset>
+
+				<fieldset class="fieldset2">
+					<legend>MMS 문자 전송</legend>
+					<ul>
+						<li><a href="SendMMS.php">sendMMS</a> - MMS 문자메시지 1건 전송</li>
+						<li><a href="SendMMS_Multi.php">sendMMS</a> - MMS 문자메시지 다량(최대1000건) 전송</li>
+						<li><a href="SendMMS_Same.php">sendMMS</a> - MMS 문자메시지 동보전송</li>
 					</ul>
 				</fieldset>
 				
