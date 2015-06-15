@@ -2,7 +2,7 @@
 
 require_once '../Popbill/PopbillStatement.php';
 
-//연동아이디
+//링크아이디
 $LinkID = 'TESTER';
 //발급받은 비밀키. 유출에 주의하시기 바랍니다.
 $SecretKey = 'jkjiPCCWfjb9yItA2CMxemSQDVEyBxZg0iymxZvaWKc=';
