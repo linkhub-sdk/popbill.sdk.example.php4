@@ -46,11 +46,22 @@
 					</ul>
 				</fieldset>
 
+        <fieldset class="fieldset2">
+					<legend>취소현금영수증 발행</legend>
+          <ul>
+						<li><a href="RevokeRegistIssue.php">revokeRegistIssue</a> - 취소현금영수증 즉시발행</li>
+            <li><a href="RevokeRegistIssue_part.php">revokeRegistIssue</a> - (부분)취소현금영수증 즉시발행</li>
+						<li><a href="RevokeRegister.php">revokeRegister</a> - 취소현금영수증 임시저장</li>
+            <li><a href="RevokeRegister_part.php">revokeRegister</a> - (부분)취소현금영수증 임시저장</li>
+					</ul>
+				</fieldset>
+
 				<fieldset class="fieldset2">
 					<legend>정보 확인</legend>
 					<ul>
 						<li><a href="GetInfo.php">getInfo</a> - 현금영수증 상태확인</li>
 						<li><a href="GetInfos.php">getInfos</a> - 현금영수증 상태 대량 확인</li>
+            <li><a href="Search.php">search</a> - 현금영수증 목록확인</li>
 						<li><a href="GetLogs.php">getLogs</a> - 현금영수증 이력 확인</li>
 						<li><a href="GetDetailInfo.php">getDetailInfo</a> - 현금영수증 상세정보 확인</li>
 					</ul>
