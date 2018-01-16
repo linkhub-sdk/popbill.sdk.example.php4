@@ -2,12 +2,12 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
-		
+
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
 	<body>
 		<div id="content">
-			
+
 			<p class="heading1">팝빌 현금영수증 SDK PHP 4.X Example.</p>
 
 			<br/>
@@ -27,16 +27,17 @@
 				</fieldset>
 
 			</fieldset>
-			
+
 			<br />
-			
+
 			<fieldset class="fieldset1">
 				<legend>현금영수증 관련 API</legend>
-				
+
 				<fieldset class="fieldset2">
 					<legend>등록/수정/발행/삭제</legend>
 					<ul>
 						<li><a href="CheckMgtKeyInUse.php">checkMgtKeyInUse</a> - 문서관리번호 사용여부 확인</li>
+            <li><a href="RegistIssue.php">registIssue</a> - 현금영수증 즉시발행</li>
 						<li><a href="Register.php">register</a> - 현금영수증 임시저장</li>
 						<li><a href="Update.php">update</a> - 현금영수증 수정</li>
 						<li><a href="Issue.php">issue</a> - 현금영수증 발행</li>
@@ -44,7 +45,7 @@
 						<li><a href="Delete.php">delete</a> - 현금영수증 삭제</li>
 					</ul>
 				</fieldset>
-				
+
 				<fieldset class="fieldset2">
 					<legend>정보 확인</legend>
 					<ul>
@@ -54,7 +55,7 @@
 						<li><a href="GetDetailInfo.php">getDetailInfo</a> - 현금영수증 상세정보 확인</li>
 					</ul>
 				</fieldset>
-				
+
 				<fieldset class="fieldset2">
 					<legend>부가기능</legend>
 					<ul>
@@ -63,7 +64,7 @@
 						<li><a href="SendFAX.php">sendFAX</a> - 현금영수증 팩스 전송</li>
 					</ul>
 				</fieldset>
-				
+
 				<fieldset class="fieldset2">
 					<legend>팝빌 현금영수증 SSO URL 기능</legend>
 					<ul>
