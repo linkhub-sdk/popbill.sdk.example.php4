@@ -9,7 +9,7 @@
 
 	$testCorpNum = '1234567890';		# 팝빌 회원 사업자 번호, "-"제외 10자리
 	$testUserID = 'testkorea';			# 팝빌 회원 아이디
-								
+
 	$mgtKeyList = array (				# 문서관리번호배열, 최대 100건
 				'20150210-01',
 				'20150210-02',
@@ -41,7 +41,7 @@
 							<li>Response.message : <? echo $message ?></li>
 					<?
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>
