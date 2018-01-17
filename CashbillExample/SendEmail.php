@@ -5,11 +5,18 @@
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
 <?php
+  /**
+  * 현금영수증 발행 안내메일을 재전송합니다.
+  */
+
 	include 'common.php';
 
-	$testCorpNum = '1234567890';	# 팝빌 회원 사업자번호, "-" 제외 10자리
-	$mgtKey = '20150210-01';		# 문서관리번호
-	$receiver = 'frenchofkiss@gmail.com';	# 수신 이메일주소
+  // 팝빌회원 사업자번호, '-' 제외 10자리
+	$testCorpNum = '1234567890';
+
+  // 현금영수증 문서관리번호
+	$mgtKey = '20150210-01';
+	$receiver = 'test@test.com';	# 수신 이메일주소
 
 	$Presponse = $CashbillService->SendEmail($testCorpNum,$mgtKey,$receiver);
 ?>

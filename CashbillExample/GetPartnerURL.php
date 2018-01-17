@@ -12,10 +12,10 @@
 
 	include 'common.php';
 
-  # 팝빌 회원 사업자 번호, "-"제외 10자리
+  // 팝빌회원 사업자번호, '-' 제외 10자리
 	$testCorpNum = '1234567890';
 
-  # [CHRG] : 포인트충전 팝업 URL
+  // [CHRG] : 포인트충전 팝업 URL
 	$TOGO = 'CHRG';
 
 	$Presponse = $CashbillService->GetPartnerURL($testCorpNum, $TOGO);

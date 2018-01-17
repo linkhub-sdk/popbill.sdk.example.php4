@@ -5,6 +5,10 @@
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
 <?php
+  /**
+  * 팝빌 연동회원 가입을 요청합니다.
+  */
+
 	include 'common.php';
 
 	$joinForm = new JoinForm();
@@ -30,7 +34,7 @@
 			<p class="heading1">Response</p>
 			<br/>
 			<fieldset class="fieldset1">
-				<legend>연동회원 가입 여부 확인 결과</legend>
+				<legend>연동회원 가입</legend>
 				<ul>
 					<li>Response.code : <?php echo $Presponse->code ?></li>
 					<li>Response.message : <?php echo $Presponse->message ?></li>

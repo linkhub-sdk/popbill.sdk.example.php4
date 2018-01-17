@@ -5,18 +5,27 @@
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
 <?php
+  /**
+  * 대량의 현금영수증 인쇄팝업 URL을 반환합니다. (최대 100건)
+  * 보안정책으로 인해 반환된 URL의 유효시간은 30초입니다.
+  */
+
 	include 'common.php';
 
-	$testCorpNum = '1234567890';		# 팝빌 회원 사업자 번호, "-"제외 10자리
-	$testUserID = 'testkorea';			# 팝빌 회원 아이디
+  // 팝빌회원 사업자번호, '-' 제외 10자리
+	$testCorpNum = '1234567890';
 
-	$mgtKeyList = array (				# 문서관리번호배열, 최대 100건
+  // 팝빌회원 아이디
+	$testUserID = 'testkorea';
+
+  // 현금영수증 문서관리번호, 최대 100개
+	$mgtKeyList = array (
 				'20150210-01',
 				'20150210-02',
 				'20150210-03',
 	);
 
-	$Presponse = $CashbillService->GetMassPrintURL($testCorpNum,$mgtKeyList,$testUserID);
+	$Presponse = $CashbillService->GetMassPrintURL($testCorpNum, $mgtKeyList, $testUserID);
 
 	if(is_a($Presponse, 'PopbillException')){
 		$code = $Presponse->code;

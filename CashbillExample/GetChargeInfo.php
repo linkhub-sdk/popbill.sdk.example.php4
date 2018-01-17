@@ -8,10 +8,10 @@
   /**
   * 현금영수증 API 서비스 과금정보를 확인합니다.
   */
-  
+
 	include 'common.php';
 
-  # 팝빌회원 사업자번호
+  // 팝빌회원 사업자번호, '-' 제외 10자리
 	$testCorpNum = '1234567890';
 
 	$Presponse = $CashbillService->GetChargeInfo($testCorpNum);

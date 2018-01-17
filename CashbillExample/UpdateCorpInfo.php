@@ -5,9 +5,9 @@
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
 <?php
-/**
-* 연동회원의 회사정보를 수정합니다
-*/
+  /**
+  * 연동회원의 회사정보를 수정합니다
+  */
 
 	include 'common.php';
 
