@@ -4,7 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
-<?php 
+<?php
 	include 'common.php';
 
 	#세금계산서 수정은 임시저장 상태에서만 가능하며, 연동관리번호를 제외한 모든 정보 수정가능합니다
@@ -25,25 +25,25 @@
 	$Taxinvoice->taxType = '과세';				# [필수] '과세', '영세', '면세' 중 기재
 	$Taxinvoice->issueTiming = '직접발행';		# [필수] 발행시점, '직접발행', '승인시자동발행' 중 기재
 
-	$Taxinvoice->invoicerCorpNum = $testCorpNum;				# [필수] 공급자 사업자번호 
+	$Taxinvoice->invoicerCorpNum = $testCorpNum;				# [필수] 공급자 사업자번호
 	$Taxinvoice->invoicerCorpName = '공급자상호_수정';			# [필수] 공급자 상호
 	$Taxinvoice->invoicerMgtKey = $invoicerMgtKey;				# [필수] 공급자 문서관리번호
 	$Taxinvoice->invoicerCEOName = '공급자 대표자성명_수정';	# [필수]
-	$Taxinvoice->invoicerAddr = '공급자 주소';					
-	$Taxinvoice->invoicerContactName = '공급자 담당자성명';		
-	$Taxinvoice->invoicerEmail = 'tester@test.com';				
-	$Taxinvoice->invoicerTEL = '070-0000-0000';					
-	$Taxinvoice->invoicerHP = '010-0000-0000';					
+	$Taxinvoice->invoicerAddr = '공급자 주소';
+	$Taxinvoice->invoicerContactName = '공급자 담당자성명';
+	$Taxinvoice->invoicerEmail = 'tester@test.com';
+	$Taxinvoice->invoicerTEL = '070-0000-0000';
+	$Taxinvoice->invoicerHP = '010-0000-0000';
 	$Taxinvoice->invoicerSMSSendYN = false;						# 발행시 문자전송 여부
 
 	$Taxinvoice->invoiceeType = '사업자';						# [필수] 공급받는자 구분, '사업자', '개인', '외국인' 중 기재
 	$Taxinvoice->invoiceeCorpNum = '8888888888';				# [필수] 공급받는자 구분에 따라 기재
 															    # '사업자':사업자번호 10자리('-'제외), '개인':주민등록번호-13자리('-'제외), '외국인' - '9999999999999' (13자리) 기재
 	$Taxinvoice->invoiceeCorpName = '공급받는자 상호';			# [필수]
-	$Taxinvoice->invoiceeMgtKey = '';							# 공급받는자 문서관리번호, [역발행]시 필수 
+	$Taxinvoice->invoiceeMgtKey = '';							# 공급받는자 문서관리번호, [역발행]시 필수
 	$Taxinvoice->invoiceeCEOName = '공급받는자 대표자성명';		# [필수]
 	$Taxinvoice->invoiceeAddr = '공급받는자 주소';
-	$Taxinvoice->invoiceeContactName1 = '공급받는자 담당자성명';	
+	$Taxinvoice->invoiceeContactName1 = '공급받는자 담당자성명';
 	$Taxinvoice->invoiceeEmail1 = 'tester@test.com';
 	$Taxinvoice->invoiceeTEL1 = '070-0000-0000';
 	$Taxinvoice->invoiceeHP1 = '010-0000-0000';
@@ -56,7 +56,7 @@
 	# 수정세금계산서 정보- 수정세금계산서 발행시에만 기재
 #	$Taxinvoice->modifyCode = '';					# 수정 사유코드 1 : 기재사항 착오정정, 2 : 공급가액 변동 3 : 환입, 4 : 계약의 해지
 													# 5 : 내국신용장 사후개설 , 6 : 착오에 의한 이중발행
-	$Taxinvoice->originalTaxinvoiceKey = '';		# 원본 세금계산서의 국세청 승인번호 
+	$Taxinvoice->originalTaxinvoiceKey = '';		# 원본 세금계산서의 국세청 승인번호
 
 	$Taxinvoice->serialNum = '123';					# 기재상 '일련번호'항목
 	$Taxinvoice->cash = '';							# 기재상 '현금'항목
@@ -74,10 +74,10 @@
 
 
 	# 상세항목 배열 99개까지 기재 가능
-	$Taxinvoice->detailList = array();				
+	$Taxinvoice->detailList = array();
 
 	$Taxinvoice->detailList[] = new TaxinvoiceDetail();
-	$Taxinvoice->detailList[0]->serialNum = 1;				# [상세항목 배열이 있는 경우 필수] 일련번호 1~99까지 순차기재, 
+	$Taxinvoice->detailList[0]->serialNum = 1;				# [상세항목 배열이 있는 경우 필수] 일련번호 1~99까지 순차기재,
 	$Taxinvoice->detailList[0]->purchaseDT = '20150101';	# 거래일자
 	$Taxinvoice->detailList[0]->itemName = '품목명1번';		# 품명
 	$Taxinvoice->detailList[0]->spec = '규격';				# 규격

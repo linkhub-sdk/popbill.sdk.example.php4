@@ -23,30 +23,30 @@
 			<fieldset class="fieldset1">
 				<legend>ASP사업자 유통메일 목록 확인</legend>
 				<ul>
-					<?
-						if(!isset($code)) { 
+					<?php
+						if(!isset($code)) {
 							for($i=0; $i< Count($Presponse); $i++){
 					?>
 							 <fieldset class ="fieldset2">
 							 <ul>
-					<?
+					<?php
 								foreach($Presponse[$i] as $key=>$val) {
 					?>
-									<li> <? echo $key; ?> : <? echo $val; ?> </li>
-					<?
+									<li> <?php echo $key; ?> : <?php echo $val; ?> </li>
+					<?php
 								}
 					?>
 							</ul>
 							</fieldset>
-					<?
+					<?php
 							}
 						} else {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>

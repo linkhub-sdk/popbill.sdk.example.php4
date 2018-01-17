@@ -34,8 +34,8 @@
 			<fieldset class="fieldset1">
 				<legend>연동회원 가입여부 확인결과</legend>
 				<ul>
-					<li>Response.code : <? echo $code ?></li>
-					<li>Response.message : <? echo $message ?></li>
+					<li>Response.code : <?php echo $code ?></li>
+					<li>Response.message : <?php echo $message ?></li>
 				</ul>
 			</fieldset>
 		 </div>

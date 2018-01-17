@@ -6,28 +6,28 @@
 	</head>
 <?php
 	include 'common.php';
-	
+
 	$testCorpNum = '1234567890';	# 팝빌 회원 사업자번호, "-"제외 10자리
 	$testUserID = 'testkorea';		# 팝빌 회원 아이디
-	$reserveDT = null;				# 예약전송일시(yyyyMMddHHmmss), null인경우 즉시전송 
+	$reserveDT = null;				# 예약전송일시(yyyyMMddHHmmss), null인경우 즉시전송
 
-#	$reserveDT = '20150211200000';  
-	
+#	$reserveDT = '20150211200000';
+
 	$Messages = array();
-	
+
 	$Messages[] = array(
 		'snd' => '07075106766',			# 발신번호
-		'rcv' => '01043245117',			# 수신번호
+		'rcv' => '010111222',			# 수신번호
 		'rcvnm' => '수신자성명',		# 수신자 성명
 		'msg'	=> 'MMS 메시지 내용',	# 개별 메시지 내용. 장문은 2000byte로 길이가 조정되어 전송됨.
 		'sjt'	=> 'MMS PHP4 SDK 메시지 제목'	# 개별 메시지 내용
 	);
 
 	$FilePath = './test.jpg';
-	
+
 	#SendMMS(사업자번호, 동보전송발신번호, 동보전송제목 동보전송내용, 전송정보배열,파일경로, 예약전송일시, 회원아이디)
 	$Presponse = $MessagingService->SendMMS($testCorpNum,'','','',$Messages, $FilePath, $reserveDT, $testUserID);
-	
+
 	if(is_a($Presponse,'PopbillException')){
 		$code = $Presponse->code;
 		$message = $Presponse->message;
@@ -40,18 +40,18 @@
 			<fieldset class="fieldset1">
 				<legend>MMS 문자 전송</legend>
 				<ul>
-					<?
+					<?php
 						if(!isset($code)) { 1
 					?>
-							<li>receiptNum : <? echo $Presponse?></li>
-					<?
+							<li>receiptNum : <?php echo $Presponse?></li>
+					<?php
 						} else {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>

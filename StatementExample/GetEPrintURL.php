@@ -13,7 +13,7 @@
 	$mgtKey = '20150206-01';		# 문서관리번호
 
 	$Presponse = $StatementService->GetEPrintURL($testCorpNum,$itemCode,$mgtKey,$testUserID);
-	
+
 	if(is_a($Presponse,'PopbillException')){
 		$code = $Presponse->code;
 		$message = $Presponse->message;
@@ -26,18 +26,18 @@
 			<fieldset class="fieldset1">
 				<legend>전자명세서 인쇄 URL(공급받는자용) </legend>
 				<ul>
-					<?
-						if(!isset($code)) { 
+					<?php
+						if(!isset($code)) {
 					?>
-							<li>url : <? echo $Presponse ?></li>
-					<?
+							<li>url : <?php echo $Presponse ?></li>
+					<?php
 						} else {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>

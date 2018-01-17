@@ -9,7 +9,6 @@
 
 	$testCorpNum = '1234567890';	# 팝빌회원 사업자번호, "-"제외 10자리
 
-
 	$Presponse = $MessagingService->GetPartnerBalance($testCorpNum);
 
 	if(is_a($Presponse,'PopbillException')){
@@ -24,18 +23,18 @@
 			<fieldset class="fieldset1">
 				<legend>파트너 잔여 포인트 확인</legend>
 				<ul>
-					<?
-						if(!isset($code)) { 
+					<?php
+						if(!isset($code)) {
 					?>
-							<li>remainPoint : <? echo $Presponse ?></li>
-					<?
+							<li>remainPoint : <?php echo $Presponse ?></li>
+					<?php
 						} else {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>

@@ -26,18 +26,18 @@
 			<fieldset class="fieldset1">
 				<legend>전자명세서 관련 URL 확인</legend>
 				<ul>
-					<?
-						if(!isset($code)) { 
+					<?php
+						if(!isset($code)) {
 					?>
-							<li>url : <? echo $Presponse ?></li>
-					<?
+							<li>url : <?php echo $Presponse ?></li>
+					<?php
 						} else {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>

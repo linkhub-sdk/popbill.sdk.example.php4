@@ -4,8 +4,8 @@
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
-<?php 
-	include 'common.php';	
+<?php
+	include 'common.php';
 
 	$testCorpNum = '1234567890';			# 팝빌회원 사업자번호, '-'제외 10자리
 	$mgtKeyType = MgtKeyType_SELL;			# 발행유형, MgtKeyType_SELL:매출, MgtKeyType_BUY:매입, MgtKeyType_TURSEE:위수탁
@@ -25,29 +25,29 @@
 			<fieldset class="fieldset1">
 				<legend>세금계산서 첨부파일 목록 확인 </legend>
 				<ul>
-					<?
+					<?php
 						if(isset($code)) {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						} else {
-	
+
 							for ($i = 0; $i < Count($Presponse) ; $i++) {
 					?>
 							<fieldset class ="fieldset2">
-								<legend> 첨부파일 [<? echo $i+1 ?>] </legend>
+								<legend> 첨부파일 [<?php echo $i+1 ?>] </legend>
 								<ul>
-									<li> serialNum : <? echo $Presponse[$i]->serialNum; ?></li>
-									<li> displayName : <? echo $Presponse[$i]->displayName; ?></li>
-									<li> attachedFile : <? echo $Presponse[$i]->attachedFile; ?></li>
-									<li> regDT : <? echo $Presponse[$i]->regDT; ?></li>
+									<li> serialNum : <?php echo $Presponse[$i]->serialNum; ?></li>
+									<li> displayName : <?php echo $Presponse[$i]->displayName; ?></li>
+									<li> attachedFile : <?php echo $Presponse[$i]->attachedFile; ?></li>
+									<li> regDT : <?php echo $Presponse[$i]->regDT; ?></li>
 								</ul>
 							</fieldset>
-					<?
+					<?php
 							}
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>

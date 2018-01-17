@@ -9,7 +9,7 @@
 
 	$testCorpNum = '1234567890';	# 팝빌 회원 사업자 번호, "-"제외 10자리
 	$testUserID = 'testkorea';		# 팝빌 회원 아이디
-	$TOGO = 'LOGIN';				# [LOGIN] : 팝빌 로그인URL, [CHRG] : 포인트충전 URL, [CERT] : 공인인증서 등록 URL 
+	$TOGO = 'LOGIN';				# [LOGIN] : 팝빌 로그인URL, [CHRG] : 포인트충전 URL, [CERT] : 공인인증서 등록 URL
 
 	$Presponse = $TaxinvoiceService->GetPopbillURL($testCorpNum, $testUserID, $TOGO);
 
@@ -25,18 +25,18 @@
 			<fieldset class="fieldset1">
 				<legend>팝빌 기본 URL 확인</legend>
 				<ul>
-					<?
-						if(!isset($code)) { 
+					<?php
+						if(!isset($code)) {
 					?>
-							<li>url : <? echo $Presponse ?></li>
-					<?
+							<li>url : <?php echo $Presponse ?></li>
+					<?php
 						} else {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>

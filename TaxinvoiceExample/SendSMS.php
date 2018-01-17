@@ -4,7 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
-<?php 
+<?php
 	include 'common.php';
 
 	$testCorpNum = '1234567890';			# 팝빌 회원 사업자번호, '-' 제외 10자리
@@ -14,7 +14,7 @@
 	$sender = '07075103710';				# 발신번호
 	$receiver = '01043245117';				# 수신번호
 	$contents = '문자전송 내용입니다. 90Byte를 초과한내용은 길이 조정되어 전송됩니다. 참고하시기 바랍니다.';
-	
+
 	$Presponse = $TaxinvoiceService->SendSMS($testCorpNum , $mgtKeyType, $mgtKey, $sender, $receiver, $contents, $testUserID);
 	$code = $Presponse->code;
 	$message = $Presponse->message;
@@ -26,8 +26,8 @@
 			<fieldset class="fieldset1">
 				<legend>알림문자 재전송</legend>
 				<ul>
-					<li>Response.code : <? echo $code ?></li>
-					<li>Response.message : <? echo $message ?></li>
+					<li>Response.code : <?php echo $code ?></li>
+					<li>Response.message : <?php echo $message ?></li>
 				</ul>
 			</fieldset>
 		 </div>

@@ -4,7 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
-<?php 
+<?php
 	include 'common.php';
 
 	$testCorpNum = '1234567890';				# 팝빌회원 사업자번호, '-' 제외 10자리
@@ -22,22 +22,22 @@
 	$Taxinvoice->taxType = '과세';				# [필수] '과세', '영세', '면세' 중 기재
 	$Taxinvoice->issueTiming = '직접발행';		# [필수] 발행시점, '직접발행', '승인시자동발행' 중 기재
 
-	$Taxinvoice->invoicerCorpNum = $testCorpNum;				# [필수] 공급자 사업자번호 
+	$Taxinvoice->invoicerCorpNum = $testCorpNum;				# [필수] 공급자 사업자번호
 	$Taxinvoice->invoicerCorpName = '공급자상호';				# [필수] 공급자 상호
 	$Taxinvoice->invoicerMgtKey = $invoicerMgtKey;				# [필수] 공급자 문서관리번호
 	$Taxinvoice->invoicerCEOName = '공급자 대표자성명';			# [필수]
-	$Taxinvoice->invoicerAddr = '공급자 주소';					
+	$Taxinvoice->invoicerAddr = '공급자 주소';
 	$Taxinvoice->invoicerContactName = '공급자 담당자성명';		# [필수]
-	$Taxinvoice->invoicerEmail = 'tester@test.com';				
-	$Taxinvoice->invoicerTEL = '070-0000-0000';					
-	$Taxinvoice->invoicerHP = '010-0000-0000';					
+	$Taxinvoice->invoicerEmail = 'tester@test.com';
+	$Taxinvoice->invoicerTEL = '070-0000-0000';
+	$Taxinvoice->invoicerHP = '010-0000-0000';
 	$Taxinvoice->invoicerSMSSendYN = false;						# 발행시 문자전송 여부
 
 	$Taxinvoice->invoiceeType = '사업자';						# [필수] 공급받는자 구분, '사업자', '개인', '외국인' 중 기재
 	$Taxinvoice->invoiceeCorpNum = '8888888888';				# [필수] 공급받는자 구분에 따라 기재
 															    # '사업자':사업자번호 10자리('-'제외), '개인':주민등록번호-13자리('-'제외), '외국인' - '9999999999999' (13자리) 기재
 	$Taxinvoice->invoiceeCorpName = '공급받는자 상호';			# [필수]
-	$Taxinvoice->invoiceeMgtKey = '';							# 공급받는자 문서관리번호, [역발행]시 필수 
+	$Taxinvoice->invoiceeMgtKey = '';							# 공급받는자 문서관리번호, [역발행]시 필수
 	$Taxinvoice->invoiceeCEOName = '공급받는자 대표자성명';		# [필수]
 	$Taxinvoice->invoiceeAddr = '공급받는자 주소';
 	$Taxinvoice->invoiceeContactName1 = '공급받는자 담당자성명';	# [필수]
@@ -69,10 +69,10 @@
 	$Taxinvoice->bankBookYN = false;				# 통장사본 파일 첨부여부
 
 	# 상세항목 배열 99개까지 기재 가능
-	$Taxinvoice->detailList = array();				
+	$Taxinvoice->detailList = array();
 
 	$Taxinvoice->detailList[] = new TaxinvoiceDetail();
-	$Taxinvoice->detailList[0]->serialNum = 1;				# [상세항목 배열이 있는 경우 필수] 일련번호 1~99까지 순차기재, 
+	$Taxinvoice->detailList[0]->serialNum = 1;				# [상세항목 배열이 있는 경우 필수] 일련번호 1~99까지 순차기재,
 	$Taxinvoice->detailList[0]->purchaseDT = '20150101';	# 거래일자
 	$Taxinvoice->detailList[0]->itemName = '품목명1번';		# 품명
 	$Taxinvoice->detailList[0]->spec = '규격';				# 규격
@@ -107,7 +107,7 @@
 	$Taxinvoice->addContactList[1]->email = 'test@test.com';		# 담당자명
 	$Taxinvoice->addContactList[1]->contactName	= '링크허브 담당자';		# 이메일주소
 
-	
+
 	#Register(사업자번호, 세금계산서객체, 회원아이디, 거래명세서 동시작성여부)
 	$Presponse = $TaxinvoiceService->Register($testCorpNum, $Taxinvoice, $testUserID, $writeSpecification);
 
@@ -121,8 +121,8 @@
 			<fieldset class="fieldset1">
 				<legend>전자세금계산서 임시저장</legend>
 				<ul>
-					<li>Response.code : <? echo $code ?></li>
-					<li>Response.message : <? echo $message ?></li>
+					<li>Response.code : <?php echo $code ?></li>
+					<li>Response.message : <?php echo $message ?></li>
 				</ul>
 			</fieldset>
 		 </div>

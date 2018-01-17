@@ -6,11 +6,11 @@
 	</head>
 <?php
 	include 'common.php';
-	
+
 	$testCorpNum = '1234567890';	# 팝빌 회원 사업자번호, "-"제외 10자리
 	$testUserID = 'testkorea';		# 팝빌 회원 아이디
 #	$reserveDT = null;				# 예약전송일시(yyyyMMddHHmmss), null인경우 즉시전송
-	$reserveDT = '20150210200000';  
+	$reserveDT = '20150210200000';
 
 	$Messages = array();
 
@@ -49,18 +49,18 @@
 			<fieldset class="fieldset1">
 				<legend>장/단문 자동인식 문자 100건 전송</legend>
 				<ul>
-					<?
-						if(!isset($code)) { 
+					<?php
+						if(!isset($code)) {
 					?>
-							<li>receiptNum : <? echo $Presponse?></li>
-					<?
+							<li>receiptNum : <?php echo $Presponse?></li>
+					<?php
 						} else {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>

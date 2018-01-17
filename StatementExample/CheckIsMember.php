@@ -4,7 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
-<?php 
+<?php
 	include 'common.php';
 
 	$testCorpNum = '1234567890';   # 사업자번호, "-"제외 10자리
@@ -16,10 +16,10 @@
 			<p class="heading1">Response</p>
 			<br/>
 			<fieldset class="fieldset1">
-				<legend>연동회원 가입 여부 확인 결과</legend>
+				<legend>연동회원 가입여부 확인</legend>
 				<ul>
-					<li>Response.code : <? echo $Presponse->code ?></li>
-					<li>Response.message : <? echo $Presponse->message ?></li>
+					<li>Response.code : <?php echo $Presponse->code ?></li>
+					<li>Response.message : <?php echo $Presponse->message ?></li>
 				</ul>
 			</fieldset>
 		 </div>

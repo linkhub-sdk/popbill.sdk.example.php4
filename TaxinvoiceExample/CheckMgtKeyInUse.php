@@ -4,13 +4,13 @@
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
-<?php 
+<?php
 	include 'common.php';
 
 	$testCorpNum = '1234567890';		# 팝빌회원 사업자번호, '-'제외 10자리
 	$mgtKey = '20150209-01';			# 문서관리번호, 발행자별로 중복없이 1~24자리 영문,숫자로 구성
 	$mgtKeyType = MgtKeyType_SELL;		# 발행유형, MgtKeyType_SELL:매출, MgtKeyType_BUY:매입, MgtKeyType_TURSEE:위수탁
-	
+
 	$Presponse = $TaxinvoiceService->CheckMgtKeyInUse($testCorpNum,$mgtKeyType,$mgtKey);
 	$Presponse ? $Presponse = '사용중' : $Presponse = '미사용중';
 
@@ -26,18 +26,18 @@
 			<fieldset class="fieldset1">
 				<legend>문서관리번호 사용여부 확인</legend>
 				<ul>
-					<?
-						if(!isset($code)) { 
+					<?php
+						if(!isset($code)) {
 					?>
-							<li>문서관리번호 사용여부 : <? echo $Presponse ?></li>					
-					<?
+							<li>문서관리번호 사용여부 : <?php echo $Presponse ?></li>
+					<?php
 						} else {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						}
-					?>		
+					?>
 
 				</ul>
 			</fieldset>

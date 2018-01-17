@@ -6,12 +6,12 @@
 	</head>
 <?php
 	include 'common.php';
-	
+
 	$testCorpNum = '1234567890';	# 팝빌 회원 사업자번호, "-"제외 10자리
 	$testUserID = 'testkorea';		# 팝빌 회원 아이디
 	$reserveDT = null;	# 예약전송일시(yyyyMMddHHmmss), null인 경우 즉시전송
-#	$reserveDT = '20151212230000';  
-	
+#	$reserveDT = '20151212230000';
+
 	$Messages = array();
 
 	$Messages[] = array(
@@ -20,7 +20,7 @@
 		'rcvnm' => '수신자성명',		# 수신자성명
 		'msg'	=> '개별 메시지 내용'	# 개별 메시지 내용
 	);
-	
+
 	#SendSMS(사업자번호, 동보전송발신번호, 동보전송내용, 전송정보배열, 예약전송일시, 회원아이디)
 	$Presponse = $MessagingService->SendSMS($testCorpNum,'','',$Messages, $reserveDT, $testUserID);
 	if(is_a($Presponse,'PopbillException')){
@@ -35,18 +35,18 @@
 			<fieldset class="fieldset1">
 				<legend>단문문자 1건 전송</legend>
 				<ul>
-					<?
-						if(!isset($code)) { 
+					<?php
+						if(!isset($code)) {
 					?>
-							<li>receiptNum : <? echo $Presponse?></li>
-					<?
+							<li>receiptNum : <?php echo $Presponse?></li>
+					<?php
 						} else {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>
