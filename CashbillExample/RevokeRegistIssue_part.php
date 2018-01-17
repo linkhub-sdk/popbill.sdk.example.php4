@@ -52,8 +52,6 @@
   // [취소] 합계금액
   $totalAmount = '4400';
 
-
-
   $Presponse = $CashbillService->RevokeRegistIssue($testCorpNum, $mgtKey, $orgConfirmNum, $orgTradeDate,
       $smssendYN, $memo, $testUserID, $isPartCancel, $cancelType, $supplyCost, $tax, $serviceFee, $totalAmount);
 
@@ -65,8 +63,8 @@
 			<fieldset class="fieldset1">
 				<legend>(부분)취소현금영수증 즉시발행</legend>
 				<ul>
-					<li>Response.code : <? echo $Presponse->code ?></li>
-					<li>Response.message : <? echo $Presponse->message ?></li>
+					<li>Response.code : <?php echo $Presponse->code ?></li>
+					<li>Response.message : <?php echo $Presponse->message ?></li>
 				</ul>
 			</fieldset>
 		 </div>

@@ -53,7 +53,6 @@
 
   $Presponse = $CashbillService->RevokeRegister($testCorpNum, $mgtKey, $orgConfirmNum, $orgTradeDate,
     $smssendYN, $testUserID, $isPartCancel, $cancelType, $supplyCost, $tax, $serviceFee, $totalAmount);
-
 ?>
 	<body>
 		<div id="content">
@@ -62,8 +61,8 @@
 			<fieldset class="fieldset1">
 				<legend>(부분)취소현금영수증 임시저장</legend>
 				<ul>
-					<li>Response.code : <? echo $Presponse->code ?></li>
-					<li>Response.message : <? echo $Presponse->message ?></li>
+					<li>Response.code : <?php echo $Presponse->code ?></li>
+					<li>Response.message : <?php echo $Presponse->message ?></li>
 				</ul>
 			</fieldset>
 		 </div>

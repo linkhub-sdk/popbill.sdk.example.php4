@@ -12,7 +12,7 @@
 	$mgtKey = '20150209-01';			# 문서관리번호
 
 	$Presponse = $CashbillService->GetMailURL($testCorpNum,$mgtKey,$testUserID);
-	
+
 	if(is_a($Presponse, 'PopbillException')){
 		$code = $Presponse->code;
 		$message = $Presponse->message;
@@ -25,18 +25,18 @@
 			<fieldset class="fieldset1">
 				<legend>공급받는자 수신 메일 링크 URL </legend>
 				<ul>
-					<?
-						if(!isset($code)) { 
+					<?php
+						if(!isset($code)) {
 					?>
-							<li>url : <? echo $Presponse ?></li>
-					<?
+							<li>url : <?php echo $Presponse ?></li>
+					<?php
 						} else {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>

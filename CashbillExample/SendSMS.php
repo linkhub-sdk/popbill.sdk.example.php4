@@ -4,7 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
-<?php 
+<?php
 	include 'common.php';
 
 	$testCorpNum = '1234567890';		# 팝빌 회원 사업자번호, "-" 제외 10자리
@@ -22,8 +22,8 @@
 			<fieldset class="fieldset1">
 				<legend>알림문자 재전송</legend>
 				<ul>
-					<li>Response.code : <? echo $Presponse->code ?></li>
-					<li>Response.message : <? echo $Presponse->message ?></li>
+					<li>Response.code : <?php echo $Presponse->code ?></li>
+					<li>Response.message : <?php echo $Presponse->message ?></li>
 				</ul>
 			</fieldset>
 		 </div>

@@ -28,48 +28,47 @@
 			<fieldset class="fieldset1">
 				<legend>현금영수증 요약정보 대량 확인</legend>
 				<ul>
-					<?
+					<?php
 						if(isset($code)) {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						} else {
 							for ($i = 0; $i < Count($Presponse); $i++) {
 					?>
-								<fieldset class="fieldset2">
-									<legend> 현금영수증 요약정보[<? echo $i+1?>]</legend>
-									<ul>
-										<li> itemKey : <? echo $Presponse[$i]->itemKey ?></li>
-										<li> mgtKey : <? echo $Presponse[$i]->mgtKey ?></li>
-										<li> tradeDate : <? echo $Presponse[$i]->tradeDate ?></li>
-										<li> issueDT : <? echo $Presponse[$i]->issueDT ?></li>
-										<li> customerName : <? echo $Presponse[$i]->customerName ?></li>
-										<li> itemName : <? echo $Presponse[$i]->itemName ?></li>
-										<li> identityNum : <? echo $Presponse[$i]->identityNum ?></li>
-										<li> taxationType : <? echo $Presponse[$i]->taxationType ?></li>
-										<li> totalAmount : <? echo $Presponse[$i]->totalAmount ?></li>
-										<li> tradeUsage : <? echo $Presponse[$i]->tradeUsage ?></li>
-										<li> tradeType : <? echo $Presponse[$i]->tradeType ?></li>
-										<li> stateCode : <? echo $Presponse[$i]->stateCode ?></li>
-										<li> stateDT : <? echo $Presponse[$i]->stateDT ?></li>
-										<li> printYN : <? echo $Presponse[$i]->printYN ?></li>
-										<li> confirmNum : <? echo $Presponse[$i]->confirmNum ?></li>
-										<li> orgTradeDate : <? echo $Presponse[$i]->orgTradeDate ?></li>
-										<li> orgConfirmNum : <? echo $Presponse[$i]->orgConfirmNum ?></li>
-										<li> ntssendDT : <? echo $Presponse[$i]->ntssendDT ?></li>
-										<li> ntsresult : <? echo $Presponse[$i]->ntsresult ?></li>
-										<li> ntsresultDT : <? echo $Presponse[$i]->ntsresultDT ?></li>
-										<li> ntsresultCode : <? echo $Presponse[$i]->ntsresultCode ?></li>
-										<li> ntsresultMessage : <? echo $Presponse[$i]->ntsresultMessage ?></li>
-										<li> regDT : <? echo $Presponse[$i]->regDT ?></li>
-									</ul>
-								</fieldset>
-					<?
+							<fieldset class="fieldset2">
+								<legend> 현금영수증 요약정보[<?php echo $i+1?>]</legend>
+								<ul>
+									<li> itemKey : <?php echo $Presponse[$i]->itemKey ?></li>
+									<li> mgtKey : <?php echo $Presponse[$i]->mgtKey ?></li>
+									<li> tradeDate : <?php echo $Presponse[$i]->tradeDate ?></li>
+									<li> issueDT : <?php echo $Presponse[$i]->issueDT ?></li>
+									<li> customerName : <?php echo $Presponse[$i]->customerName ?></li>
+									<li> itemName : <?php echo $Presponse[$i]->itemName ?></li>
+									<li> identityNum : <?php echo $Presponse[$i]->identityNum ?></li>
+									<li> taxationType : <?php echo $Presponse[$i]->taxationType ?></li>
+									<li> totalAmount : <?php echo $Presponse[$i]->totalAmount ?></li>
+									<li> tradeUsage : <?php echo $Presponse[$i]->tradeUsage ?></li>
+									<li> tradeType : <?php echo $Presponse[$i]->tradeType ?></li>
+									<li> stateCode : <?php echo $Presponse[$i]->stateCode ?></li>
+									<li> stateDT : <?php echo $Presponse[$i]->stateDT ?></li>
+									<li> printYN : <?php echo $Presponse[$i]->printYN ?></li>
+									<li> confirmNum : <?php echo $Presponse[$i]->confirmNum ?></li>
+									<li> orgTradeDate : <?php echo $Presponse[$i]->orgTradeDate ?></li>
+									<li> orgConfirmNum : <?php echo $Presponse[$i]->orgConfirmNum ?></li>
+									<li> ntssendDT : <?php echo $Presponse[$i]->ntssendDT ?></li>
+									<li> ntsresult : <?php echo $Presponse[$i]->ntsresult ?></li>
+									<li> ntsresultDT : <?php echo $Presponse[$i]->ntsresultDT ?></li>
+									<li> ntsresultCode : <?php echo $Presponse[$i]->ntsresultCode ?></li>
+									<li> ntsresultMessage : <?php echo $Presponse[$i]->ntsresultMessage ?></li>
+									<li> regDT : <?php echo $Presponse[$i]->regDT ?></li>
+								</ul>
+							</fieldset>
+					<?php
 							}
 						}
 					?>
-
 				</ul>
 			</fieldset>
 		 </div>

@@ -30,18 +30,18 @@
 			<p class="heading1">Response</p>
 			<br/>
 			<fieldset class="fieldset1">
-				<legend>파트너 포인트 충전 팝업 URL URL 확인</legend>
+				<legend>파트너 포인트 충전 팝업 URL 확인</legend>
 				<ul>
-					<?
+					<?php
 						if(!isset($code)) {
 					?>
-							<li>url : <? echo $Presponse ?></li>
-					<?
+							<li>url : <?php echo $Presponse ?></li>
+					<?php
 						} else {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						}
 					?>
 				</ul>

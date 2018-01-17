@@ -4,14 +4,14 @@
 		<link rel="stylesheet" type="text/css" href="/Example.css" media="screen" />
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
-<?php 
-	include 'common.php';	
+<?php
+	include 'common.php';
 
 	$testCorpNum = '1234567890';	# 팝빌회원 사업자번호
 	$mgtKey = '20150210-00';		# 문서관리번호
 
 	$Presponse = $CashbillService->GetInfo($testCorpNum, $mgtKey);
-	
+
 	if(is_a($Presponse, 'PopbillException')){
 		$code = $Presponse->code;
 		$message = $Presponse->message;
@@ -24,42 +24,42 @@
 			<fieldset class="fieldset1">
 				<legend>현금영수증 요약정보 및 상태정보 확인</legend>
 				<ul>
-					<?
-						if(isset($code)) { 
+					<?php
+						if(isset($code)) {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						} else {
 							{
 					?>
-								<li> itemKey : <? echo $Presponse->itemKey ?></li>
-								<li> mgtKey : <? echo $Presponse->mgtKey ?></li>
-								<li> tradeDate : <? echo $Presponse->tradeDate ?></li>
-								<li> issueDT : <? echo $Presponse->issueDT ?></li>
-								<li> customerName : <? echo $Presponse->customerName ?></li>
-								<li> itemName : <? echo $Presponse->itemName ?></li>
-								<li> identityNum : <? echo $Presponse->identityNum ?></li>
-								<li> taxationType : <? echo $Presponse->taxationType ?></li>
-								<li> totalAmount : <? echo $Presponse->totalAmount ?></li>
-								<li> tradeUsage : <? echo $Presponse->tradeUsage ?></li>
-								<li> tradeType : <? echo $Presponse->tradeType ?></li>
-								<li> stateCode : <? echo $Presponse->stateCode ?></li>
-								<li> stateDT : <? echo $Presponse->stateDT ?></li>
-								<li> printYN : <? echo $Presponse->printYN ?></li>
-								<li> confirmNum : <? echo $Presponse->confirmNum ?></li>
-								<li> orgTradeDate : <? echo $Presponse->orgTradeDate ?></li>
-								<li> orgConfirmNum : <? echo $Presponse->orgConfirmNum ?></li>
-								<li> ntssendDT : <? echo $Presponse->ntssendDT ?></li>
-								<li> ntsresult : <? echo $Presponse->ntsresult ?></li>
-								<li> ntsresultDT : <? echo $Presponse->ntsresultDT ?></li>
-								<li> ntsresultCode : <? echo $Presponse->ntsresultCode ?></li>
-								<li> ntsresultMessage : <? echo $Presponse->ntsresultMessage ?></li>
-								<li> regDT : <? echo $Presponse->regDT ?></li>
-					<?
+								<li> itemKey : <?php echo $Presponse->itemKey ?></li>
+								<li> mgtKey : <?php echo $Presponse->mgtKey ?></li>
+								<li> tradeDate : <?php echo $Presponse->tradeDate ?></li>
+								<li> issueDT : <?php echo $Presponse->issueDT ?></li>
+								<li> customerName : <?php echo $Presponse->customerName ?></li>
+								<li> itemName : <?php echo $Presponse->itemName ?></li>
+								<li> identityNum : <?php echo $Presponse->identityNum ?></li>
+								<li> taxationType : <?php echo $Presponse->taxationType ?></li>
+								<li> totalAmount : <?php echo $Presponse->totalAmount ?></li>
+								<li> tradeUsage : <?php echo $Presponse->tradeUsage ?></li>
+								<li> tradeType : <?php echo $Presponse->tradeType ?></li>
+								<li> stateCode : <?php echo $Presponse->stateCode ?></li>
+								<li> stateDT : <?php echo $Presponse->stateDT ?></li>
+								<li> printYN : <?php echo $Presponse->printYN ?></li>
+								<li> confirmNum : <?php echo $Presponse->confirmNum ?></li>
+								<li> orgTradeDate : <?php echo $Presponse->orgTradeDate ?></li>
+								<li> orgConfirmNum : <?php echo $Presponse->orgConfirmNum ?></li>
+								<li> ntssendDT : <?php echo $Presponse->ntssendDT ?></li>
+								<li> ntsresult : <?php echo $Presponse->ntsresult ?></li>
+								<li> ntsresultDT : <?php echo $Presponse->ntsresultDT ?></li>
+								<li> ntsresultCode : <?php echo $Presponse->ntsresultCode ?></li>
+								<li> ntsresultMessage : <?php echo $Presponse->ntsresultMessage ?></li>
+								<li> regDT : <?php echo $Presponse->regDT ?></li>
+					<?php
 							}
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>

@@ -22,30 +22,30 @@
 			<fieldset class="fieldset1">
 				<legend>담당자 목록 조회</legend>
 				<ul>
-					<?
+					<?php
 						if(isset($code)) {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						} else {
 							for ($i = 0; $i < Count($Presponse); $i++) {
 					?>
 								<fieldset class="fieldset2">
-									<legend> 담당자 목록[<? echo $i+1?>]</legend>
+									<legend> 담당자 목록[<?php echo $i+1?>]</legend>
 									<ul>
-										<li> id : <? echo $Presponse[$i]->id ?></li>
-                    <li> personName : <? echo $Presponse[$i]->personName ?></li>
-                    <li> email : <? echo $Presponse[$i]->email ?></li>
-                    <li> hp : <? echo $Presponse[$i]->hp ?></li>
-                    <li> searchAllAllowYN : <? echo $Presponse[$i]->searchAllAllowYN ?></li>
-                    <li> tel : <? echo $Presponse[$i]->tel ?></li>
-                    <li> fax : <? echo $Presponse[$i]->fax ?></li>
-                    <li> mgrYN : <? echo $Presponse[$i]->mgrYN ?></li>
-                    <li> regDT : <? echo $Presponse[$i]->regDT ?></li>
+										<li> id : <?php echo $Presponse[$i]->id ?></li>
+                    <li> personName : <?php echo $Presponse[$i]->personName ?></li>
+                    <li> email : <?php echo $Presponse[$i]->email ?></li>
+                    <li> hp : <?php echo $Presponse[$i]->hp ?></li>
+                    <li> searchAllAllowYN : <?php echo $Presponse[$i]->searchAllAllowYN ?></li>
+                    <li> tel : <?php echo $Presponse[$i]->tel ?></li>
+                    <li> fax : <?php echo $Presponse[$i]->fax ?></li>
+                    <li> mgrYN : <?php echo $Presponse[$i]->mgrYN ?></li>
+                    <li> regDT : <?php echo $Presponse[$i]->regDT ?></li>
 									</ul>
 								</fieldset>
-					<?
+					<?php
 							}
 						}
 					?>

@@ -10,7 +10,7 @@
 	$testCorpNum = '1234567890';	# 팝빌회원 사업자번호
 
 	$Presponse = $CashbillService->GetBalance($testCorpNum);
-	
+
 	if(is_a($Presponse,'PopbillException')){
 		$code = $Presponse->code;
 		$message = $Presponse->message;
@@ -21,20 +21,20 @@
 			<p class="heading1">Response</p>
 			<br/>
 			<fieldset class="fieldset1">
-				<legend>연동회원 잔여포인트 확인 테스트</legend>
+				<legend>연동회원 잔여포인트 확인</legend>
 				<ul>
-					<?
-						if(!isset($code)) { 
+					<?php
+						if(!isset($code)) {
 					?>
-							<li>잔여포인트 : <? echo $Presponse?></li>
-					<?
+							<li>잔여포인트 : <?php echo $Presponse?></li>
+					<?php
 						} else {
 					?>
-							<li>Response.code : <? echo $code ?> </li>
-							<li>Response.message : <? echo $message ?></li>
-					<?
+							<li>Response.code : <?php echo $code ?> </li>
+							<li>Response.message : <?php echo $message ?></li>
+					<?php
 						}
-					?>		
+					?>
 				</ul>
 			</fieldset>
 		 </div>

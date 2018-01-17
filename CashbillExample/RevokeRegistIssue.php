@@ -28,10 +28,8 @@
   // 원본현금영수증 거래일자, 문서정보 확인(GetInfo API)을 통해 확인가능.
   $orgTradeDate = '20170711';
 
-
   $Presponse = $CashbillService->RevokeRegistIssue($testCorpNum, $mgtKey,
     $orgConfirmNum, $orgTradeDate);
-
 ?>
 	<body>
 		<div id="content">
@@ -40,8 +38,8 @@
 			<fieldset class="fieldset1">
 				<legend>취소현금영수증 즉시발행</legend>
 				<ul>
-					<li>Response.code : <? echo $Presponse->code ?></li>
-					<li>Response.message : <? echo $Presponse->message ?></li>
+					<li>Response.code : <?php echo $Presponse->code ?></li>
+					<li>Response.message : <?php echo $Presponse->message ?></li>
 				</ul>
 			</fieldset>
 		 </div>
