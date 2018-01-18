@@ -5,11 +5,22 @@
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
 <?php
+  /**
+  * 1건의 세금계산서 상태/요약 정보를 확인합니다.
+  * - 세금계산서 상태정보(GetInfo API) 응답항목에 대한 자세한 정보는
+  *   "[전자세금계산서 API 연동매뉴얼] > 4.2. (세금)계산서 상태정보 구성" 을 참조하시기 바랍니다.
+  */
+
 	include 'common.php';
 
-	$testCorpNum = '1234567890';			# 팝빌회원 사업자번호, '-'제외 10자리
-	$mgtKeyType = MgtKeyType_SELL;			# 발행유형, MgtKeyType_SELL:매출, MgtKeyType_BUY:매입, MgtKeyType_TURSEE:위수탁
-	$mgtKey = '20150211-01';				# 문서관리번호
+  // 팝빌회원 사업자번호, '-' 제외 10자리
+	$testCorpNum = '1234567890';
+
+  // 발행유형, MgtKeyType_SELL:매출, MgtKeyType_BUY:매입, MgtKeyType_TURSEE:위수탁
+	$mgtKeyType = MgtKeyType_SELL;
+
+  // 문서관리번호
+	$mgtKey = '20150211-01';
 
 	$Presponse = $TaxinvoiceService->GetInfo($testCorpNum, $mgtKeyType, $mgtKey);
 

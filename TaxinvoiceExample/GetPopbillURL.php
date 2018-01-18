@@ -5,11 +5,21 @@
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
 <?php
+  /**
+  * 팝빌 관련 URL을 반환합니다.
+  * 반환된 URL은 보안정책에 따라 30초의 유효시간을 갖습니다.
+  */
+
 	include 'common.php';
 
-	$testCorpNum = '1234567890';	# 팝빌 회원 사업자 번호, "-"제외 10자리
-	$testUserID = 'testkorea';		# 팝빌 회원 아이디
-	$TOGO = 'LOGIN';				# [LOGIN] : 팝빌 로그인URL, [CHRG] : 포인트충전 URL, [CERT] : 공인인증서 등록 URL
+  // 팝빌회원 사업자번호, '-' 제외 10자리
+	$testCorpNum = '1234567890';
+
+  // 팝빌 회원 아이디
+	$testUserID = 'testkorea';
+
+  // [LOGIN] : 팝빌 로그인URL, [CHRG] : 포인트충전 URL, [CERT] : 공인인증서 등록 URL
+	$TOGO = 'LOGIN';
 
 	$Presponse = $TaxinvoiceService->GetPopbillURL($testCorpNum, $testUserID, $TOGO);
 

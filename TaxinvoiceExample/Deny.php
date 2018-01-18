@@ -5,13 +5,27 @@
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
 <?php
+  /**
+  * 발행예정 세금계산서를 [거부]처리 합니다.
+  * - [거부]처리된 세금계산서를 삭제(Delete API)하면 등록된 문서관리번호를 재사용할 수 있습니다.
+  */
+  
 	include 'common.php';
 
-	$testCorpNum = '1234567890';			# 팝빌 회원 사업자번호, '-' 제외 10자리
-	$testUserID = 'testkorea';				# 팝빌 회원 아이디
-	$mgtKeyType = MgtKeyType_BUY;			# 발행유형, MgtKeyType_SELL:매출, MgtKeyType_BUY:매입, MgtKeyType_TURSEE:위수탁
-	$mgtKey = '20150210-02';				# 문서관리번호
-	$memo = '발행예정 거부메모입니다';		# 메모
+  // 팝빌 회원 사업자번호, '-' 제외 10자리
+	$testCorpNum = '1234567890';
+
+  // 팝빌 회원 아이디
+	$testUserID = 'testkorea';
+
+  // 발행유형, MgtKeyType_SELL:매출, MgtKeyType_BUY:매입, MgtKeyType_TURSEE:위수탁
+	$mgtKeyType = MgtKeyType_BUY;
+
+  // 문서관리번호
+	$mgtKey = '20150210-02';
+
+  // 메모
+	$memo = '발행예정 거부메모입니다';
 
 	$Presponse = $TaxinvoiceService->Deny($testCorpNum, $mgtKeyType, $mgtKey, $memo, $testUserID);
 	$code = $Presponse->code;

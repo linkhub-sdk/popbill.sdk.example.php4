@@ -5,23 +5,48 @@
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
 <?php
+  /**
+  * 파트너의 연동회원으로 회원가입을 요청합니다.
+  */
 	include 'common.php';
 
 	$joinForm = new JoinForm();
 
-	$joinForm->LinkID 		= $LinkID;				# 링크아이디
-	$joinForm->CorpNum 		= '1234567890';			# 사업자번호, "-"제외 10자리
-	$joinForm->CEOName 		= '대표자성명';			# 대표자성명
-	$joinForm->CorpName 	= '테스트사업자상호';	# 사업자상호
-	$joinForm->Addr			= '테스트사업자주소';	# 사업자주소
-	$joinForm->ZipCode		= '사업장우편번호';		# 사업장 우편번호
-	$joinForm->BizType		= '업태';				# 업태
-	$joinForm->BizClass		= '업종';				# 업종
-	$joinForm->ContactName	= '담당자상명';			# 담당자명
-	$joinForm->ContactEmail	= 'tester@test.com';	# 담당자 이메일
-	$joinForm->ContactTEL	= '07075106766';		# 담당자 연락처
-	$joinForm->ID			= 'userid_phpdd';		# 아이디, 6자 이상 20자미만
-	$joinForm->PWD			= 'thisispassword';		# 비밀번호, 6자 이상 20자미만
+  // 링크아이디
+	$joinForm->LinkID 		= $LinkID;
+
+  // 사업자번호, "-"제외 10자리
+	$joinForm->CorpNum 		= '1234567890';
+
+  // 대표자성명
+	$joinForm->CEOName 		= '대표자성명';
+
+  // 사업자상호
+	$joinForm->CorpName 	= '테스트사업자상호';
+
+  // 사업자주소
+	$joinForm->Addr			= '테스트사업자주소';
+
+  // 업태
+  $joinForm->BizType		= '업태';
+
+  // 종목
+	$joinForm->BizClass		= '종목';
+
+  // 담당자명
+	$joinForm->ContactName	= '담당자상명';
+
+  // 담당자 이메일
+	$joinForm->ContactEmail	= 'tester@test.com';
+
+  // 담당자 연락처
+	$joinForm->ContactTEL	= '07075106766';
+
+  // 아이디, 6자 이상 20자미만
+	$joinForm->ID			= 'userid_phpdd';
+
+  // 비밀번호, 6자 이상 20자미만
+	$joinForm->PWD			= 'thisispassword';
 
 	$Presponse = $TaxinvoiceService->JoinMember($joinForm);
 	$code = $Presponse->code;

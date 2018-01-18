@@ -5,13 +5,28 @@
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
 <?php
+  /**
+  * 공급받는자에게 요청받은 역발행 세금계산서를 [거부]처리 합니다.
+  * - 세금계산서의 문서관리번호를 재사용하기 위해서는 삭제 (Delete API) 를
+  *   호출하여 [삭제] 처리해야 합니다.
+  */
+
 	include 'common.php';
 
-	$testCorpNum = '1234567890';			# 팝빌 회원 사업자번호, '-' 제외 10자리
-	$testUserID = 'testkorea';				# 팝빌 회원 아이디
-	$mgtKeyType = MgtKeyType_SELL;			# 발행유형, MgtKeyType_SELL:매출, MgtKeyType_BUY:매입, MgtKeyType_TURSEE:위수탁
-	$mgtKey = '20150204-01';				# 문서관리번호
-	$memo = '역)발행 요청 거부메모입니다';	# 메모
+  // 팝빌회원 사업자번호, '-' 제외 10자리
+	$testCorpNum = '1234567890';
+
+  // 팝빌 회원 아이디
+	$testUserID = 'testkorea';
+
+  // 발행유형, MgtKeyType_SELL:매출, MgtKeyType_BUY:매입, MgtKeyType_TURSEE:위수탁
+	$mgtKeyType = MgtKeyType_SELL;
+
+  // 문서관리번호
+	$mgtKey = '20150204-01';
+
+  // 메모
+	$memo = '역)발행 요청 거부메모입니다';
 
 	$Presponse = $TaxinvoiceService->Refuse($testCorpNum, $mgtKeyType, $mgtKey, $memo, $testUserID);
 	$code = $Presponse->code;

@@ -5,11 +5,22 @@
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
 <?php
+  /**
+  * 세금계산서 첨부파일 목록을 확인합니다.
+  * - 응답항목 중 파일아이디(AttachedFile) 항목은 파일삭제(DeleteFile API)
+  *   호출시 이용할 수 있습니다.
+  */
+
 	include 'common.php';
 
-	$testCorpNum = '1234567890';			# 팝빌회원 사업자번호, '-'제외 10자리
-	$mgtKeyType = MgtKeyType_SELL;			# 발행유형, MgtKeyType_SELL:매출, MgtKeyType_BUY:매입, MgtKeyType_TURSEE:위수탁
-	$mgtKey = '20150210-02';				# 문서관리번호
+  // 팝빌회원 사업자번호, '-' 제외 10자리
+	$testCorpNum = '1234567890';
+
+  // 발행유형, MgtKeyType_SELL:매출, MgtKeyType_BUY:매입, MgtKeyType_TURSEE:위수탁
+	$mgtKeyType = MgtKeyType_SELL;
+
+  // 문서관리번호
+	$mgtKey = '20150210-02';
 
 	$Presponse= $TaxinvoiceService->GetFiles($testCorpNum, $mgtKeyType, $mgtKey);
 

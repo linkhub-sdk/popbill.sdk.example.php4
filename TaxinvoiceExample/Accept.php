@@ -5,13 +5,26 @@
 		<title>팝빌 SDK PHP 4.X Example.</title>
 	</head>
 <?php
+  /**
+  * 1건의 발행예정 세금계산서를 [승인] 처리합니다.
+  */
+
 	include 'common.php';
 
-	$testCorpNum = '1234567890';			# 팝빌 회원 사업자번호, '-' 제외 10자리
-	$testUserID = 'testkorea';				# 팝빌 회원 아이디
-	$mgtKeyType = MgtKeyType_BUY;			# 발행유형, MgtKeyType_SELL:매출, MgtKeyType_BUY:매입, MgtKeyType_TURSEE:위수탁
-	$mgtKey = '20150210-01';				# 문서관리번호
-	$memo = '발행예정 승인메모입니다';		# 메모
+  // 팝빌회원 사업자번호, '-' 제외 10자리
+	$testCorpNum = '1234567890';
+
+  // 팝빌회원 아이디
+	$testUserID = 'testkorea';
+
+  //발행유형, MgtKeyType_SELL:매출, MgtKeyType_BUY:매입, MgtKeyType_TURSEE:위수탁
+	$mgtKeyType = MgtKeyType_BUY;
+
+  // 문서관리번호
+	$mgtKey = '20150210-01';
+
+  // 메모
+	$memo = '발행예정 승인메모입니다';
 
 	$Presponse = $TaxinvoiceService->Accept($testCorpNum,$mgtKeyType,$mgtKey,$memo,$testUserID);
 	$code = $Presponse->code;
