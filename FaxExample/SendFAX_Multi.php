@@ -26,7 +26,7 @@
 		'rcvnm' => '수신자성명'		#수신자 명칭
 	);
 
-	#해당파일에 읽기 권한이 설정되어 있어야 함. 최대 5개.
+	#해당파일에 읽기 권한이 설정되어 있어야 함. 최대 20개.
 	$Files = array('./uploadtest.jpg','./uploadtest2.jpg');
 
 	$Presponse = $FaxService->SendFAX($testCorpNum,$Sender,$Receivers, $Files, $reserveDT, $testUserID);
